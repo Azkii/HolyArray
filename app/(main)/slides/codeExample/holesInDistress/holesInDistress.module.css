@@ -1,0 +1,52 @@
+.provider {
+  display: flex;
+  height: 300px;
+  width: 100%;
+  gap: 40px;
+
+  @media (max-width: 1400px) {
+    flex-direction: column-reverse;
+    height: fit-content;
+
+    & > .codeBlock {
+      min-height: 167px;
+    }
+  }
+}
+
+.container {
+  min-width: 650px;
+  width: 100%;
+  flex: 1;
+}
+
+.codeBlock {
+  flex: 3;
+  padding: 16px;
+  background-color: var(--fg-color);
+}
+
+.content {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.selectable {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 16px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--fg-color);
+  }
+}
+
+.selectable[data-selected="true"] {
+  background-color: var(--primary-light);
+}

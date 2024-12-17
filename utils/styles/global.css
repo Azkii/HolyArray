@@ -1,0 +1,52 @@
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Background and Foreground */
+    --bg-color: rgb(29, 30, 30); /* Background Color */
+    --fg-color: rgb(50, 52, 52);
+
+    /* Primary Colors */
+    --primary-color: rgb(130, 63, 207); /* Ansi 1 Color */
+    --primary-light: rgb(118, 127, 131); /* Ansi 0 Color */
+    --primary-dark: rgb(84, 106, 106); /* Ansi 2 Color */
+
+    /* Accent Colors */
+    --accent-1: rgb(207, 165, 165); /* Ansi 9 Color */
+    --accent-2: rgb(93, 88, 99); /* Ansi 8 Color */
+    --accent-3: rgb(74, 117, 175); /* Ansi 4 Color */
+    --accent-4: rgb(64, 155, 101); /* Ansi 5 Color */
+    --accent-5: rgb(80, 175, 99); /* Ansi 6 Color */
+
+    /* Selection */
+    --selection-bg: rgb(22, 87, 22); /* Selection Color */
+    --selection-fg: rgba(248, 247, 248, 0.8); /* Selected Text Color */
+
+    /* Cursor */
+    --cursor-color: rgb(237, 208, 206); /* Cursor Color */
+    --cursor-text-color: rgb(52, 57, 52); /* Cursor Text Color */
+
+    /* Bold text */
+    --bold-text: rgb(250, 255, 255); /* Bold Color */
+
+    /* Extra colors */
+    --extra-1: rgb(120, 88, 92); /* Ansi 3 Color */
+    --extra-2: rgb(121, 107, 106); /* Ansi 12 Color */
+    --extra-3: rgb(60, 111, 105); /* Ansi 7 Color */
+    --extra-4: rgb(96, 108, 128); /* Ansi 13 Color */
+    --extra-5: rgb(121, 143, 136); /* Ansi 14 Color */
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --background: #f8f9fa;
+    --foreground: #8a9199;
+  }
+}

@@ -1,0 +1,31 @@
+.section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 600px;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  font-size: 14px;
+
+  @media (max-width: 1200px) {
+    font-size: 11px;
+  }
+
+  @media (max-width: 992px) {
+    font-size: 9px;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 7px;
+  }
+
+  & > h2 {
+    color: var(--primary-light);
+  }
+}

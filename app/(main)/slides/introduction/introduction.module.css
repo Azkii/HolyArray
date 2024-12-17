@@ -1,0 +1,38 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 24px;
+
+  & > .subtitle {
+    font-size: 20px;
+    color: var(--primary-light);
+  }
+}
+
+.table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.cell {
+  border: 2px solid var(--fg-color);
+  font-size: 20px;
+  padding: 20px;
+  text-align: center;
+}
+
+.tableHeader {
+  border: 2px solid var(--fg-color);
+  background-color: var(--primary-light);
+  font-size: 20px;
+  font-weight: bold;
+  padding: 20px;
+  text-align: center;
+}
