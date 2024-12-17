@@ -7,6 +7,7 @@ import { Selection, SelectionProvider } from "codehike/utils/selection"
 import { Pre, highlight } from "codehike/code"
 import { tokenTransitions } from "@/components/annotations/token-transitions"
 import { Controls } from "./controls"
+import styles from "./performenceIssues.module.css"
 
 const Schema = Block.extend({
   steps: z.array(Block.extend({ code: CodeBlock })),
@@ -16,15 +17,17 @@ export default function PerformenceIssues() {
   const { steps } = parseRoot(Content, Schema)
 
   return (
-    <SelectionProvider>
-      <Selection
-        from={steps.map((step) => (
-          <Code codeblock={step.code} />
-        ))}
-      />
-      <Controls length={steps.length} />
-      <div>
+    <SelectionProvider className={styles.provider}>
+      <div className={styles.container}>
         <Selection from={steps.map((step) => step.children)} />
+        <Controls length={steps.length} />
+      </div>
+      <div className={styles.codeBlock}>
+        <Selection
+          from={steps.map((step) => (
+            <Code codeblock={step.code} />
+          ))}
+        />
       </div>
     </SelectionProvider>
   )

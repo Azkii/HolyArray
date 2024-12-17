@@ -1,0 +1,41 @@
+.provider {
+  display: flex;
+  min-height: 400px;
+  width: 100%;
+  gap: 40px;
+
+  @media (max-width: 1400px) {
+    flex-direction: column-reverse;
+    height: fit-content;
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 650px;
+  width: 100%;
+  flex: 1;
+}
+
+.codeBlock {
+  flex: 3;
+  padding: 16px;
+  background-color: var(--fg-color);
+}
+
+.controls {
+  display: flex;
+  gap: 16px;
+
+  & > button {
+    width: 100%;
+    padding: 16px;
+    font-size: 20px;
+    font-family: monospace;
+    border-radius: 0;
+    background-color: transparent;
+    border: solid 1px var(--primary-light);
+  }
+}
