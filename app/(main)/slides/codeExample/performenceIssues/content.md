@@ -1,130 +1,113 @@
-## !!steps
+## !!steps Step 1: Assign "Doom" to an index
 
-This is the first step. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+We assign string "Doom" to index 42 in the array.
+Since this index is large and non-sequential, it makes the array sparse, with gaps at other indices.
 
 ```js !
-const index = 42
+const highiestIndex = 42
+const index = 5
 const array = ["Maelstrom"]
-array[index] = "Doom"
+array[highiestIndex] = "Doom"
 ```
 
-## !!steps
+## !!steps Step 2: Bounds Check
 
-The second step, lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-
-```js !
-const index = 42
-const array = ["Maelstrom"]
-array[index] = "Doom"
-
-array[index]
-// -> false ❌
-```
-
-## !!steps
-
-And the third step, lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+We check if the index 5 is within the bounds of the array.
+The index 5 is still within bounds.
 
 ```js !
-const index = 42
+const highiestIndex = 42
+const index = 5
 const array = ["Maelstrom"]
-array[index] = "Doom"
-
-array[index]
-// -> false ❌
+array[highiestIndex] = "Doom"
 
 index >= 0 && index < array.length //bounds check
 // -> true ✅
 ```
 
-## !!steps
+## !!steps Step 3: Check Array's Own Property
 
-And the third step, lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Next, we check if the array owns the property at index 5. Since the array is sparse, it doesn't own this index in a normal way — it's not directly added to the array's properties. Therefore, the check returns false.
 
 ```js !
-const index = 42
+const highiestIndex = 42
+const index = 5
 const array = ["Maelstrom"]
-array[index] = "Doom"
-
-array[index]
-// -> false ❌
+array[highiestIndex] = "Doom"
 
 index >= 0 && index < array.length //bounds check
 // -> true ✅
 
-hasOwnProperty(array, index)
+array.hasOwnProperty(index)
 // -> false ❌
 ```
 
-## !!steps
+## !!steps Step 4: Check Array's Prototype Property
 
-And the third step, lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Next, we check if Array.prototype owns the property at index 5.
+Index 5 is not in the prototype chain.
 
 ```js !
-const index = 42
+const highiestIndex = 42
+const index = 5
 const array = ["Maelstrom"]
-array[index] = "Doom"
-
-array[index]
-// -> false ❌
+array[highiestIndex] = "Doom"
 
 index >= 0 && index < array.length //bounds check
 // -> true ✅
 
-hasOwnProperty(array, index)
+array.hasOwnProperty(index)
 // -> false ❌
 
-hasOwnProperty(Array.prototype, index)
+Array.prototype.hasOwnProperty(index)
 // -> false ❌
 ```
 
-## !!steps
+## !!steps Step 5: Check Object Prototype Property
 
-And the third step, lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Next, we check if Object.prototype owns the property at index 5.
+This also returns false, because Object.prototype doesn't contain the custom index we assigned to the array.
 
 ```js !
-const index = 42
+const highiestIndex = 42
+const index = 5
 const array = ["Maelstrom"]
-array[index] = "Doom"
-
-array[index]
-// -> false ❌
+array[highiestIndex] = "Doom"
 
 index >= 0 && index < array.length //bounds check
 // -> true ✅
 
-hasOwnProperty(array, index)
+array.hasOwnProperty(index)
 // -> false ❌
 
-hasOwnProperty(Array.prototype, index)
+Array.prototype.hasOwnProperty(index)
 // -> false ❌
 
-hasOwnProperty(Object.prototype, index)
+Object.prototype.hasOwnProperty(index)
 // -> false ❌
 ```
 
-## !!steps
+## !!steps Step 6: Prototype Chain Ends
 
-And the third step, lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+The prototype chain ends after reaching Object.prototype.
+No further checks are made, and the index isn't found in the prototype chain, returning undefined.
 
 ```js !
-const index = 42
+const highiestIndex = 42
+const index = 5
 const array = ["Maelstrom"]
-array[index] = "Doom"
-
-array[index]
-// -> false ❌
+array[highiestIndex] = "Doom"
 
 index >= 0 && index < array.length //bounds check
 // -> true ✅
 
-hasOwnProperty(array, index)
+array.hasOwnProperty(index)
 // -> false ❌
 
-hasOwnProperty(Array.prototype, index)
+Array.prototype.hasOwnProperty(index)
 // -> false ❌
 
-hasOwnProperty(Object.prototype, index)
+Object.prototype.hasOwnProperty(index)
 // -> false ❌
 
 // Prototype ends after reaching Object.prototype and returns undefined

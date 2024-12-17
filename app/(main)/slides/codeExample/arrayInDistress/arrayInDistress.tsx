@@ -5,10 +5,9 @@ import {
   SelectionProvider,
 } from "codehike/utils/selection"
 import { Block, CodeBlock, parseRoot } from "codehike/blocks"
-import { highlight, Pre } from "codehike/code"
 import Content from "./content.md"
-import { tokenTransitions } from "@/components/annotations/token-transitions"
 import styles from "./arrayInDistress.module.css"
+import { CodeWithCopy } from "@/components/codeWithCopy/codeWithCopy"
 
 const Schema = Block.extend({
   steps: z.array(Block.extend({ code: CodeBlock })),
@@ -37,15 +36,10 @@ export default function ArrayInDistress() {
       <div className={styles.codeBlock}>
         <Selection
           from={steps.map((step) => (
-            <Code codeblock={step.code} />
+            <CodeWithCopy codeblock={step.code} />
           ))}
         />
       </div>
     </SelectionProvider>
   )
-}
-
-async function Code({ codeblock }: any) {
-  const highlighted = await highlight(codeblock, "github-dark")
-  return <Pre code={highlighted} handlers={[tokenTransitions]} />
 }

@@ -1,0 +1,15 @@
+.btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 4px;
+
+  width: 29px;
+  border: solid 1px transparent;
+  background-color: var(--primary-light);
+}
+
+.btn:hover {
+  background-color: var(--primary-dark);
+  cursor: pointer;
+}

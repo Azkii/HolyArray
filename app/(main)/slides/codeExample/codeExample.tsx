@@ -31,6 +31,7 @@ export default function CodeExample() {
         alt=""
       />
       <HolesInDistress />
+      <p>const array = new Array(3)</p>
       <h2 className={styles.title}>Performence issues</h2>
       <PerformenceIssues />
     </section>

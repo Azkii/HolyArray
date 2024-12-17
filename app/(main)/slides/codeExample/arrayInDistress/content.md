@@ -12,7 +12,7 @@ const array = []
 ```js !
 const array = []
 
-// The integer 4 is added to the array.
+// Integer 4 is added to the array.
 // Since it's a small integer (Smi), V8 changes the element kind to PACKED_SMI_ELEMENTS.
 array.push(4)
 ```
@@ -23,7 +23,7 @@ array.push(4)
 const array = []
 array.push(4)
 
-// The integer 2 is added to the array.
+// Integer 2 is added to the array.
 // Since it's also a small integer (Smi), the element kind remains PACKED_SMI_ELEMENTS.
 array.push(2)
 ```
@@ -35,7 +35,7 @@ const array = []
 array.push(4)
 array.push(2)
 
-// The floating-point number 13.37 is added to the array.
+// Floating-point number 13.37 is added to the array.
 // Since floating-point numbers (doubles) cannot be represented as Smi,
 // V8 changes the element kind to PACKED_DOUBLE_ELEMENTS.
 array.push(13.37)
@@ -49,8 +49,8 @@ array.push(4)
 array.push(2)
 array.push(13.37)
 
-// The string 'x' is added to the array.
+// String 'END' is added to the array.
 // Since strings cannot be represented as Smi or doubles,
 // V8 changes the element kind to PACKED_ELEMENTS.
-array.push("x")
+array.push("END")
 ```

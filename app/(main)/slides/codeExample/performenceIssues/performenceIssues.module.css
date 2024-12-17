@@ -1,12 +1,13 @@
 .provider {
   display: flex;
-  min-height: 400px;
+  min-height: 340px;
   width: 100%;
   gap: 40px;
 
   @media (max-width: 1400px) {
     flex-direction: column-reverse;
     height: fit-content;
+    gap: 0;
   }
 }
 
@@ -37,5 +38,21 @@
     border-radius: 0;
     background-color: transparent;
     border: solid 1px var(--primary-light);
+    cursor: pointer;
+  }
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  & > h3 {
+    font-size: 20px;
+  }
+
+  & > span {
+    font-size: 18px;
+    color: var(--primary-light);
   }
 }
