@@ -39,3 +39,16 @@ array[5] = 1337
 // The array now contains mixed types and still has holes, so V8 transitions the element kind to HOLEY_ELEMENTS.
 array.push("DOOM")
 ```
+
+## !!steps Extra: new Array(12)
+
+```js !
+// Array with 2 uninitialized slots will create (holey array).
+const array = new Array(2)
+
+// Assigning small integers (Smi) to holes.
+array[0] = 1
+array[1] = 2
+
+// Although the values are set, the array is still "holey" because it's created with uninitialized slots.
+```
